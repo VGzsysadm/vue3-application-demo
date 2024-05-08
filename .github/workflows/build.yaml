@@ -21,10 +21,11 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build -t demo/vue3-reactive-app: ${{  github.ref_name }} .
+        docker build -t demo/vue3-reactive-app:${{  github.ref_name }} .
+
+    - name: Tag the image
+      run: |
+        docker tag demo/vue3-reactive-app:${{  github.ref_name }} vgzsysadm/vue3-reactive-app:latest
 
     - name: Push the Docker image to Docker Hub latest
       run: docker push vgzsysadm/vue3-reactive-app:latest
-
-    - name: Push the Docker image to Docker Hub last tag
-      run: docker push vgzsysadm/vue3-reactive-app:${{  github.ref_name }}
