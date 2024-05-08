@@ -21,8 +21,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build -t vgzsysadm/vue3-reactive-app: ${{  github.ref_name }} .
-      working-directory: .
+        docker build -t demo/vue3-reactive-app: ${{  github.ref_name }} .
 
     - name: Push the Docker image to Docker Hub latest
       run: docker push vgzsysadm/vue3-reactive-app:latest
