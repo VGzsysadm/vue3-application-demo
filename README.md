@@ -19,3 +19,7 @@ To run the application locally, follow these steps:
 5. Run the dev server:
    ```bash
    npm run dev
+
+6. You can run also the image from dockerhub with:
+   ```bash
+   docker run -p 80:80 vgzsysadm/vue3-reactive-app:latest
